@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>8.1 はじめてのプログラミング</title>
+</head>
+<body>
+    <h1>JavaScript サンプル</h1>
+
+    <p>
+        文字列操作
+    </p>
+    <script>
+        /*
+        s1=100000
+        s2=40000
+        x1=s2*100/s1
+        alert(x1)
+        */
+
+       /*
+       参考記事：正規表現（RegExp） - とほほのWWW入門
+
+       regexp = /pattern/flags
+        flags
+        g	global	2番目、3番目... にマッチする部分も検索する
+        i	ignoreCase	大文字・小文字を区別しない
+        m	multiline	複数行に対して検索する
+        u	unicode	Unicodeのサロゲーションペア文字も1文字として扱う
+        y	sticky	lastIndex で指定した位置からのみ検索する
+        s	dotAll	ピリオド(.)が CR, LF, U+2028, U+2029 を含め、すべての文字にマッチする (ES2018～)
+        */
+
+        sTmp="2022/04/01"
+        alert(sTmp.replace(/\//g,''))
+
+        /*
+        以下では末尾が００の場合は削除できない
+        0$, [^1-9]$,
+        以下では末尾が００の場合削除できる。
+        0*　⇒ 0文字以上の最大マッチ。最小マッチは0*?でも削除できる。
+        0+　⇒ 1文字以上の最大マッチ。最小マッチは0+?でも削除できる。
+
+        ↑最大マッチ、最小マッチは置換する部分が１ｹ所の場合は同じ。
+        0文字以上、1文字以上は検索条件は検索条件。置換する場合は1文字以上の最大マッチが無難？
+        */
+
+        sTmp="0.0100"
+        alert(sTmp.replace(/^0/,'').replace(/0+$/,''))
+    </script>
+</body>
+</html>
